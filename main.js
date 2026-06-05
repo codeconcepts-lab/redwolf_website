@@ -124,22 +124,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------
-    // Mobile Menu: close on outside click
+    // Mobile Menu: toggle, outside click, link click
     // ----------------------------------------
     const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu) {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+
+    if (menuToggle && mobileMenu) {
+        // Toggle on button click
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close on outside click
         document.addEventListener('click', (e) => {
-            const toggleBtn = document.getElementById('mobile-menu-toggle');
-            if (!mobileMenu.contains(e.target) && toggleBtn && !toggleBtn.contains(e.target)) {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
             }
         });
-    }
 
-    // ----------------------------------------
-    // Mobile Menu: close on link click
-    // ----------------------------------------
-    if (mobileMenu) {
+        // Close on any nav link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });

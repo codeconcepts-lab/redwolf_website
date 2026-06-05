@@ -1,0 +1,50 @@
+<nav class="fixed w-full z-50 glass-panel border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="/index.html"
+                class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                <img src="/assets/logos/RED WOLF Logo.png" class="header-logo">
+                <div class="flex flex-col" style="height: 70px; justify-content: center;">
+                    <span class="header-brandname-top">RED WOLF</span>
+                    <span class="group-hover:text-redwolf-gold transition-colors header-brandname-bottom">SECURITY</span>
+                </div>
+            </a>
+            <!-- Desktop Nav -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="/index.html" id="nav-home"
+                        class="nav-link hover:text-redwolf-gold transition-all px-3 py-2 text-sm font-bold text-gray-400 uppercase tracking-wide">Home</a>
+                    <a href="/about.html" id="nav-about"
+                        class="nav-link hover:text-redwolf-gold transition-all px-3 py-2 text-sm font-bold text-gray-400 uppercase tracking-wide">About</a>
+                    <a href="/services.html" id="nav-services"
+                        class="nav-link hover:text-redwolf-gold transition-all px-3 py-2 text-sm font-bold text-gray-400 uppercase tracking-wide">Services</a>
+                    <a href="/contact.html" id="nav-contact"
+                        class="nav-link hover:text-redwolf-gold transition-all px-3 py-2 text-sm font-bold text-gray-400 uppercase tracking-wide">Contact</a>
+                </div>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                    class="text-white hover:text-redwolf-gold transition-colors">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="hidden md:hidden bg-zinc-900 border-t border-zinc-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/index.html"
+                class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-zinc-800 hover:text-redwolf-gold">Home</a>
+            <a href="/about.html"
+                class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-zinc-800 hover:text-redwolf-gold">About Us</a>
+            <a href="/services.html"
+                class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-zinc-800 hover:text-redwolf-gold">Services</a>
+            <a href="/contact.html"
+                class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-zinc-800 hover:text-redwolf-gold">Contact</a>
+        </div>
+    </div>
+</nav>

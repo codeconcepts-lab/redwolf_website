@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact | Red Wolf Security</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/assets/logos/RED WOLF Logo.png">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body class="antialiased selection:bg-redwolf selection:text-white flex flex-col min-h-screen">
+        <nav class="fixed w-full z-50 glass-panel border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="/index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                        <img src="/assets/logos/RED WOLF Logo.png" class="header-logo" alt="Red Wolf Security Logo">
+                        <div class="flex flex-col" style="height:70px;justify-content:center;">
+                            <span class="header-brandname-top">RED WOLF</span>
+                            <span class="header-brandname-bottom group-hover:text-redwolf-gold transition-colors">SECURITY</span>
+                        </div>
+                    </a>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="/index.html" id="nav-home" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Home</a>
+                        <a href="/about.html" id="nav-about" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">About</a>
+                        <a href="/services.html" id="nav-services" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Services</a>
+                        <a href="/contact.html" id="nav-contact" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Contact</a>
+                        <a href="/quote.html" class="ml-2 px-5 py-2.5 bg-redwolf hover:bg-redwolf-dark text-white text-xs font-bold uppercase tracking-wider rounded transition-all shadow-[0_0_20px_rgba(151,47,30,0.3)] hover:shadow-[0_0_35px_rgba(151,47,30,0.5)]">Get a Quote</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-white hover:text-redwolf-gold transition-colors p-2" aria-label="Toggle menu">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-zinc-900/97 backdrop-blur border-t border-zinc-800">
+                <div class="px-4 pt-2 pb-4 space-y-1">
+                    <a href="/index.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Home</a>
+                    <a href="/about.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">About</a>
+                    <a href="/services.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Services</a>
+                    <a href="/contact.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Contact</a>
+                    <div class="pt-3"><a href="/quote.html" class="block w-full text-center px-4 py-3 bg-redwolf hover:bg-redwolf-dark text-white text-sm font-bold uppercase tracking-wider rounded transition-all">Get a Quote</a></div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow">
+            <!-- Page Hero -->
+            <section class="pt-32 md:pt-40 pb-12 md:pb-20 bg-black relative overflow-hidden">
+                <div class="absolute inset-0 bg-dot-pattern opacity-40"></div>
+                <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] glow-red rounded-full pointer-events-none opacity-25"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="section-label reveal">
+                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-redwolf">Home &rsaquo; Contact</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-none reveal reveal-delay-1">
+                        Get In <span class="text-redwolf-gold">Touch</span>
+                    </h1>
+                    <p class="text-base md:text-xl text-gray-400 max-w-2xl leading-relaxed reveal reveal-delay-2">
+                        Our security experts are ready to help. Get in touch for a no-obligation consultation.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="py-20 bg-zinc-950 border-t border-zinc-900">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-5 gap-8 lg:gap-12">
+                        <!-- Contact Info -->
+                        <div class="lg:col-span-2 space-y-6 reveal-left">
+                            <!-- HQ Card -->
+                            <div class="feature-card p-8">
+                                <h3 class="text-xl font-black text-white mb-7">Contact Details</h3>
+                                <div class="space-y-6">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 rounded-lg bg-redwolf/10 border border-redwolf/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-envelope text-redwolf text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-white text-sm mb-0.5">Email Us</p>
+                                            <a href="mailto:contact@redwolfsecurity.com" class="text-sm text-gray-500 hover:text-redwolf-gold transition-colors">contact@redwolfsecurity.com</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 rounded-lg bg-redwolf/10 border border-redwolf/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-phone text-redwolf text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-white text-sm mb-0.5">Call Us</p>
+                                            <a href="tel:+2348180303067" class="text-sm text-gray-500 hover:text-redwolf-gold transition-colors">+234 818 030 3067</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 rounded-lg bg-redwolf/10 border border-redwolf/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-brands fa-whatsapp text-redwolf text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-white text-sm mb-0.5">WhatsApp</p>
+                                            <a href="https://wa.me/2348180303067" target="_blank" rel="noopener" class="text-sm text-gray-500 hover:text-redwolf-gold transition-colors">Chat with us directly</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Assurance Card -->
+                            <div class="bg-redwolf/5 border border-redwolf/20 rounded-2xl p-7">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="fa-solid fa-shield-halved text-redwolf text-lg"></i>
+                                    <h4 class="font-bold text-white">The Red Wolf Assurance</h4>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed italic">
+                                    "We will provide comprehensive security solutions across all industry types — meeting your requirements, exceeding your expectations."
+                                </p>
+                            </div>
+                            <!-- Quick links -->
+                            <div class="feature-card p-6">
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Quick Actions</p>
+                                <div class="space-y-2">
+                                    <a href="/quote.html" class="flex items-center gap-3 text-sm text-white hover:text-redwolf-gold transition-colors py-1.5">
+                                        <i class="fa-solid fa-file-lines text-redwolf text-xs w-4 text-center"></i> Request a Quote
+                                    </a>
+                                    <a href="/services.html" class="flex items-center gap-3 text-sm text-white hover:text-redwolf-gold transition-colors py-1.5">
+                                        <i class="fa-solid fa-shield-halved text-redwolf text-xs w-4 text-center"></i> View Our Services
+                                    </a>
+                                    <a href="/about.html" class="flex items-center gap-3 text-sm text-white hover:text-redwolf-gold transition-colors py-1.5">
+                                        <i class="fa-solid fa-circle-info text-redwolf text-xs w-4 text-center"></i> Learn About Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="lg:col-span-3 feature-card p-5 sm:p-8 lg:p-10 reveal-right">
+                            <div class="section-label mb-6">
+                                <span class="text-xs font-bold uppercase tracking-[0.25em] text-redwolf">Send a Message</span>
+                            </div>
+                            <h2 class="text-2xl font-black text-white mb-8">Tell us what you need</h2>
+                            <form method="POST" action="/send-contact.php" class="space-y-6">
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2" for="first_name">First Name</label>
+                                        <input type="text" id="first_name" name="first_name" placeholder="John" required class="w-full bg-black/50 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:border-redwolf-gold focus:outline-none focus:ring-1 focus:ring-redwolf-gold/30 transition-all text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2" for="last_name">Last Name</label>
+                                        <input type="text" id="last_name" name="last_name" placeholder="Doe" required class="w-full bg-black/50 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:border-redwolf-gold focus:outline-none focus:ring-1 focus:ring-redwolf-gold/30 transition-all text-sm">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2" for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="john@company.com" required class="w-full bg-black/50 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:border-redwolf-gold focus:outline-none focus:ring-1 focus:ring-redwolf-gold/30 transition-all text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2" for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+234 (0) 800 000 0000" class="w-full bg-black/50 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:border-redwolf-gold focus:outline-none focus:ring-1 focus:ring-redwolf-gold/30 transition-all text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2" for="service_interest">Service Interest</label>
+                                    <select id="service_interest" name="service_interest" class="w-full bg-black/50 border border-zinc-800 rounded-xl p-4 text-white focus:border-redwolf-gold focus:outline-none focus:ring-1 focus:ring-redwolf-gold/30 transition-all text-sm">
+                                        <option value="">Select a service…</option>
+                                        <option>Manned Guarding</option>
+                                        <option>CCTV & Surveillance</option>
+                                        <option>Vehicle Tracking</option>
+                                        <option>Solar/Power Solutions</option>
+                                        <option>Investigations</option>
+                                        <option>Access Control</option>
+                                        <option>Smart Home</option>
+                                        <option>Fire Detection</option>
+                                        <option>Consulting</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2" for="message">Message</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="How can we help you achieve absolute safety?" required class="w-full bg-black/50 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:border-redwolf-gold focus:outline-none focus:ring-1 focus:ring-redwolf-gold/30 transition-all resize-none text-sm"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-redwolf hover:bg-redwolf-dark text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(151,47,30,0.2)] hover:shadow-[0_0_50px_rgba(151,47,30,0.4)] text-sm uppercase tracking-wider hover:-translate-y-0.5">
+                                    Send Message <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-zinc-950 border-t border-zinc-900 pt-16 pb-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mb-10 md:mb-14">
+                    <div class="col-span-2 md:col-span-1">
+                        <a href="/index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                            <img src="/assets/logos/RED WOLF Logo.png" class="footer-logo" alt="Red Wolf Security">
+                            <div class="flex flex-col" style="height:100px;justify-content:center;">
+                                <span class="footer-brandname-top">RED WOLF</span>
+                                <span class="footer-brandname-bottom group-hover:text-redwolf-gold transition-colors">SECURITY</span>
+                            </div>
+                        </a>
+                        <p class="text-gray-500 text-sm leading-relaxed">Absolute safety without compromise. Nigeria's premium integrated security provider.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Navigate</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/index.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Home</a></li>
+                            <li><a href="/about.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">About Us</a></li>
+                            <li><a href="/services.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Services</a></li>
+                            <li><a href="/contact.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/services/guarding.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Guarding</a></li>
+                            <li><a href="/services/cctv.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">CCTV & Surveillance</a></li>
+                            <li><a href="/services/fire.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Fire Detection</a></li>
+                            <li><a href="/services/solar.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Solar Solutions</a></li>
+                            <li><a href="/services/access-control.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Access Control</a></li>
+                            <li><a href="/services/tracking.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Vehicle Tracking</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Get in Touch</h4>
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fa-solid fa-envelope text-redwolf mt-0.5 flex-shrink-0"></i>
+                                <a href="mailto:contact@redwolfsecurity.com" class="text-gray-500 hover:text-redwolf-gold transition-colors">contact@redwolfsecurity.com</a>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-gray-500">
+                                <i class="fa-solid fa-phone text-redwolf mt-0.5 flex-shrink-0"></i>
+                                <a href="tel:+2348180303067" class="hover:text-redwolf-gold transition-colors">+234 818 030 3067</a>
+                            </li>
+                        </ul>
+                        <a href="/quote.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-redwolf hover:bg-redwolf-dark text-white text-xs font-bold uppercase tracking-wider rounded transition-all shadow-[0_0_20px_rgba(151,47,30,0.3)] hover:shadow-[0_0_35px_rgba(151,47,30,0.5)]">Get a Quote <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+                <div class="border-t border-zinc-900 pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
+                    <p class="text-zinc-700 text-xs">&copy; 2026 Red Wolf Security. All Rights Reserved.</p>
+                    <p class="text-zinc-700 text-xs">Designed by <a href="https://nexoraweb.agency/" target="_blank" class="text-redwolf hover:text-redwolf-gold transition-colors font-bold">Nexora Web Agency</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating Elements -->
+        <a href="https://wa.me/2348180303067" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+        <div id="mobile-cta-bar" class="mobile-cta-bar">
+            <a href="tel:+2348180303067" class="flex-1 flex items-center justify-center gap-2 py-2.5 border border-zinc-700 rounded text-xs font-bold text-white uppercase tracking-wider hover:border-zinc-500 transition-all">
+                <i class="fa-solid fa-phone text-redwolf"></i> Call Us
+            </a>
+            <a href="/quote.html" class="flex-1 flex items-center justify-center gap-2 py-2.5 bg-redwolf hover:bg-redwolf-dark rounded text-xs font-bold text-white uppercase tracking-wider transition-all">
+                <i class="fa-solid fa-file-lines"></i> Get a Quote
+            </a>
+        </div>
+
+        <script src="/nav-highlight.js"></script>
+        <script src="/main.js"></script>
+    </body>
+
+</html>

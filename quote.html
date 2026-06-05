@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get a Quote | Red Wolf Security</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/assets/logos/RED WOLF Logo.png">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+        <style>
+            .step-dot {
+                width: 2rem; height: 2rem; border-radius: 50%;
+                display: flex; align-items: center; justify-content: center;
+                font-size: 0.7rem; font-weight: 900;
+                border: 2px solid rgba(63,63,70,0.8);
+                color: #71717a; background: rgba(24,24,27,0.8);
+                transition: all 0.3s; flex-shrink: 0;
+            }
+            .step-dot.active { border-color: #972f1e; background: #972f1e; color: #fff; box-shadow: 0 0 15px rgba(151,47,30,0.4); }
+            .step-dot.done   { border-color: #ebaf0b; background: rgba(235,175,11,0.1); color: #ebaf0b; }
+            .step-line { flex: 1; height: 1px; background: rgba(63,63,70,0.6); transition: background 0.3s; }
+            .step-line.done  { background: #972f1e; }
+
+            .form-section { display: none; }
+            .form-section.active { display: block; }
+
+            .service-check { display: none; }
+            .service-check-label {
+                display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+                padding: 1rem 0.75rem;
+                background: rgba(24,24,27,0.5); border: 1px solid rgba(63,63,70,0.5);
+                border-radius: 0.875rem; cursor: pointer; transition: all 0.2s; text-align: center;
+            }
+            .service-check-label:hover { border-color: rgba(151,47,30,0.4); background: rgba(24,24,27,0.8); }
+            .service-check:checked + .service-check-label { border-color: #972f1e; background: rgba(151,47,30,0.08); box-shadow: 0 0 0 1px rgba(151,47,30,0.3); }
+            .check-icon {
+                width: 2.25rem; height: 2.25rem; border-radius: 0.6rem;
+                background: rgba(151,47,30,0.1); border: 1px solid rgba(151,47,30,0.2);
+                display: flex; align-items: center; justify-content: center;
+                color: #ebaf0b; font-size: 0.9rem; transition: all 0.2s;
+            }
+            .service-check:checked + .service-check-label .check-icon { color: #fff; background: #972f1e; border-color: #972f1e; }
+            .check-label-text { font-size: 0.7rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2; transition: color 0.2s; }
+            .service-check:checked + .service-check-label .check-label-text { color: #fff; }
+
+            .form-input {
+                width: 100%; background: rgba(0,0,0,0.4); border: 1px solid rgba(63,63,70,0.7);
+                border-radius: 0.75rem; padding: 0.875rem 1rem; color: #fff; font-size: 0.875rem;
+                transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+                font-family: 'Open Sans', sans-serif;
+            }
+            .form-input::placeholder { color: #52525b; }
+            .form-input:focus { border-color: #ebaf0b; box-shadow: 0 0 0 2px rgba(235,175,11,0.1); }
+            select.form-input option { background: #18181b; }
+            .form-label { display: block; font-size: 0.7rem; font-weight: 700; color: #71717a; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+
+            .radio-pill { display: none; }
+            .radio-pill-label {
+                display: inline-flex; align-items: center; gap: 0.5rem;
+                padding: 0.625rem 1rem;
+                background: rgba(24,24,27,0.5); border: 1px solid rgba(63,63,70,0.5);
+                border-radius: 9999px; cursor: pointer;
+                font-size: 0.8rem; font-weight: 600; color: #71717a; transition: all 0.2s;
+            }
+            .radio-pill-label:hover { border-color: rgba(151,47,30,0.4); color: #d4d4d8; }
+            .radio-pill:checked + .radio-pill-label { border-color: #972f1e; background: rgba(151,47,30,0.1); color: #fff; }
+        </style>
+    </head>
+    <body class="antialiased selection:bg-redwolf selection:text-white flex flex-col min-h-screen">
+
+        <!-- NAV -->
+        <nav class="fixed w-full z-50 glass-panel border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="/index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                        <img src="/assets/logos/RED WOLF Logo.png" class="header-logo">
+                        <div class="flex flex-col" style="height:70px;justify-content:center;">
+                            <span class="header-brandname-top">RED WOLF</span>
+                            <span class="header-brandname-bottom group-hover:text-redwolf-gold transition-colors">SECURITY</span>
+                        </div>
+                    </a>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="/index.html" id="nav-home" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Home</a>
+                        <a href="/about.html" id="nav-about" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">About</a>
+                        <a href="/services.html" id="nav-services" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Services</a>
+                        <a href="/contact.html" id="nav-contact" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Contact</a>
+                        <a href="/quote.html" class="ml-2 px-5 py-2.5 bg-redwolf hover:bg-redwolf-dark text-white text-xs font-bold uppercase tracking-wider rounded transition-all shadow-[0_0_20px_rgba(151,47,30,0.3)] hover:shadow-[0_0_35px_rgba(151,47,30,0.5)]">Get a Quote</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-white hover:text-redwolf-gold transition-colors p-2" aria-label="Toggle menu">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-zinc-900/95 backdrop-blur border-t border-zinc-800">
+                <div class="px-4 pt-2 pb-4 space-y-1">
+                    <a href="/index.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Home</a>
+                    <a href="/about.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">About</a>
+                    <a href="/services.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Services</a>
+                    <a href="/contact.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Contact</a>
+                    <div class="pt-3"><a href="/quote.html" class="block w-full text-center px-4 py-3 bg-redwolf hover:bg-redwolf-dark text-white text-sm font-bold uppercase tracking-wider rounded transition-all">Get a Quote</a></div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow">
+
+            <!-- HERO -->
+            <section class="pt-40 pb-14 bg-black relative overflow-hidden">
+                <div class="absolute inset-0 bg-dot-pattern opacity-40"></div>
+                <div class="absolute -bottom-40 -right-40 w-[600px] h-[600px] glow-red rounded-full pointer-events-none opacity-20"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-end">
+                        <div>
+                            <div class="section-label">
+                                <span class="text-xs font-bold uppercase tracking-[0.25em] text-redwolf">Consultation</span>
+                            </div>
+                            <h1 class="text-5xl md:text-7xl font-black text-white leading-none mb-6">
+                                Get Your<br><span class="text-redwolf-gold">Quote</span>
+                            </h1>
+                            <p class="text-xl text-gray-400 max-w-lg leading-relaxed reveal reveal-delay-2">
+                                Tell us about your security needs and we'll put together a tailored programme — no cost, no obligation.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="feature-card p-5 text-center">
+                                <div class="w-10 h-10 rounded-full bg-redwolf/10 border border-redwolf/20 flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-redwolf font-black text-sm">1</span>
+                                </div>
+                                <p class="text-xs font-bold text-white mb-1">Fill the Form</p>
+                                <p class="text-xs text-gray-600">2 quick steps</p>
+                            </div>
+                            <div class="feature-card p-5 text-center">
+                                <div class="w-10 h-10 rounded-full bg-redwolf/10 border border-redwolf/20 flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-redwolf font-black text-sm">2</span>
+                                </div>
+                                <p class="text-xs font-bold text-white mb-1">We Review</p>
+                                <p class="text-xs text-gray-600">As soon as possible</p>
+                            </div>
+                            <div class="feature-card p-5 text-center">
+                                <div class="w-10 h-10 rounded-full bg-redwolf/10 border border-redwolf/20 flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-redwolf font-black text-sm">3</span>
+                                </div>
+                                <p class="text-xs font-bold text-white mb-1">Get Proposal</p>
+                                <p class="text-xs text-gray-600">Tailored to you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FORM -->
+            <section class="py-10 md:py-16 bg-zinc-950 border-t border-zinc-900">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                    <!-- Step indicator -->
+                    <div class="flex items-center gap-0 mb-12" id="step-indicator">
+                        <div class="flex flex-col items-center gap-1.5">
+                            <div class="step-dot active" id="dot-1">1</div>
+                            <span class="text-xs font-bold text-white uppercase tracking-wider hidden sm:block">Contact</span>
+                        </div>
+                        <div class="step-line" id="line-1"></div>
+                        <div class="flex flex-col items-center gap-1.5">
+                            <div class="step-dot" id="dot-2">2</div>
+                            <span class="text-xs font-bold text-gray-600 uppercase tracking-wider hidden sm:block">Services</span>
+                        </div>
+                    </div>
+
+                    <form id="quote-form" method="POST" action="/send-quote.php">
+
+                        <!-- STEP 1: Contact Details -->
+                        <div class="form-section active" id="step-1">
+                            <div class="section-label mb-6">
+                                <span class="text-xs font-bold uppercase tracking-[0.25em] text-redwolf">Step 1 of 2</span>
+                            </div>
+                            <h2 class="text-3xl font-black text-white mb-2">Your Details</h2>
+                            <p class="text-gray-500 mb-10">Who should we prepare this quote for?</p>
+
+                            <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="form-label">First Name *</label>
+                                    <input type="text" name="first_name" placeholder="John" required class="form-input">
+                                </div>
+                                <div>
+                                    <label class="form-label">Last Name *</label>
+                                    <input type="text" name="last_name" placeholder="Doe" required class="form-input">
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-6 mb-10">
+                                <div>
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" name="email" placeholder="john@company.com" required class="form-input">
+                                </div>
+                                <div>
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" name="phone" placeholder="+234 (0) 800 000 0000" required class="form-input">
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="button" onclick="nextStep(2)" class="group inline-flex items-center gap-3 px-8 py-4 bg-redwolf hover:bg-redwolf-dark text-white font-bold text-sm uppercase tracking-wider rounded transition-all shadow-[0_0_25px_rgba(151,47,30,0.25)] hover:shadow-[0_0_40px_rgba(151,47,30,0.4)] hover:-translate-y-0.5">
+                                    Continue to Services <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: Services -->
+                        <div class="form-section" id="step-2">
+                            <div class="section-label mb-6">
+                                <span class="text-xs font-bold uppercase tracking-[0.25em] text-redwolf">Step 2 of 2</span>
+                            </div>
+                            <h2 class="text-3xl font-black text-white mb-2">Services Needed</h2>
+                            <p class="text-gray-500 mb-10">Select all that apply — you can always add more later.</p>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-10">
+                                <div><input type="checkbox" name="service_guarding" id="s-guard" class="service-check" value="Guarding"><label for="s-guard" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-person-military-pointing"></i></span><span class="check-label-text">Guarding</span></label></div>
+                                <div><input type="checkbox" name="service_cctv" id="s-cctv" class="service-check" value="CCTV"><label for="s-cctv" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-video"></i></span><span class="check-label-text">CCTV</span></label></div>
+                                <div><input type="checkbox" name="service_access" id="s-access" class="service-check" value="Access Control"><label for="s-access" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-id-card"></i></span><span class="check-label-text">Access Control</span></label></div>
+                                <div><input type="checkbox" name="service_fire" id="s-fire" class="service-check" value="Fire Detection"><label for="s-fire" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-fire-extinguisher"></i></span><span class="check-label-text">Fire Detection</span></label></div>
+                                <div><input type="checkbox" name="service_solar" id="s-solar" class="service-check" value="Solar"><label for="s-solar" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-solar-panel"></i></span><span class="check-label-text">Solar</span></label></div>
+                                <div><input type="checkbox" name="service_smarthome" id="s-smart" class="service-check" value="Smart Home"><label for="s-smart" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-house-signal"></i></span><span class="check-label-text">Smart Home</span></label></div>
+                                <div><input type="checkbox" name="service_tracking" id="s-track" class="service-check" value="Vehicle Tracking"><label for="s-track" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-location-crosshairs"></i></span><span class="check-label-text">Tracking</span></label></div>
+                                <div><input type="checkbox" name="service_investigation" id="s-invest" class="service-check" value="Investigation"><label for="s-invest" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-magnifying-glass"></i></span><span class="check-label-text">Investigation</span></label></div>
+                                <div><input type="checkbox" name="service_consulting" id="s-consult" class="service-check" value="Consulting"><label for="s-consult" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-user-tie"></i></span><span class="check-label-text">Consulting</span></label></div>
+                                <div><input type="checkbox" name="service_other" id="s-other" class="service-check" value="Other"><label for="s-other" class="service-check-label"><span class="check-icon"><i class="fa-solid fa-ellipsis"></i></span><span class="check-label-text">Other</span></label></div>
+                            </div>
+
+                            <div class="mb-8">
+                                <label class="form-label mb-4">Property / Site Type</label>
+                                <div class="flex flex-wrap gap-3 mt-3">
+                                    <input type="radio" name="property_type" id="pt-res" value="Residential" class="radio-pill"><label for="pt-res" class="radio-pill-label"><i class="fa-solid fa-house text-xs"></i> Residential</label>
+                                    <input type="radio" name="property_type" id="pt-com" value="Commercial" class="radio-pill"><label for="pt-com" class="radio-pill-label"><i class="fa-solid fa-building text-xs"></i> Commercial</label>
+                                    <input type="radio" name="property_type" id="pt-ind" value="Industrial" class="radio-pill"><label for="pt-ind" class="radio-pill-label"><i class="fa-solid fa-industry text-xs"></i> Industrial</label>
+                                    <input type="radio" name="property_type" id="pt-ret" value="Retail" class="radio-pill"><label for="pt-ret" class="radio-pill-label"><i class="fa-solid fa-store text-xs"></i> Retail</label>
+                                    <input type="radio" name="property_type" id="pt-edu" value="Education" class="radio-pill"><label for="pt-edu" class="radio-pill-label"><i class="fa-solid fa-graduation-cap text-xs"></i> Education</label>
+                                    <input type="radio" name="property_type" id="pt-hlt" value="Healthcare" class="radio-pill"><label for="pt-hlt" class="radio-pill-label"><i class="fa-solid fa-hospital text-xs"></i> Healthcare</label>
+                                    <input type="radio" name="property_type" id="pt-evt" value="Events" class="radio-pill"><label for="pt-evt" class="radio-pill-label"><i class="fa-solid fa-calendar-check text-xs"></i> Events</label>
+                                    <input type="radio" name="property_type" id="pt-oth" value="Other" class="radio-pill"><label for="pt-oth" class="radio-pill-label"><i class="fa-solid fa-ellipsis text-xs"></i> Other</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-10">
+                                <label class="form-label mb-4">Number of Sites / Locations</label>
+                                <div class="flex flex-wrap gap-3 mt-3">
+                                    <input type="radio" name="num_sites" id="ns-1" value="1" class="radio-pill"><label for="ns-1" class="radio-pill-label">1</label>
+                                    <input type="radio" name="num_sites" id="ns-2" value="2–5" class="radio-pill"><label for="ns-2" class="radio-pill-label">2–5</label>
+                                    <input type="radio" name="num_sites" id="ns-3" value="6–10" class="radio-pill"><label for="ns-3" class="radio-pill-label">6–10</label>
+                                    <input type="radio" name="num_sites" id="ns-4" value="10+" class="radio-pill"><label for="ns-4" class="radio-pill-label">10+</label>
+                                </div>
+                            </div>
+
+                            <div class="bg-redwolf/5 border border-redwolf/20 rounded-xl p-5 mb-10 flex items-start gap-4">
+                                <i class="fa-solid fa-shield-halved text-redwolf mt-0.5 flex-shrink-0"></i>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Your information is kept completely confidential. A Red Wolf Security expert will review your request and contact you with a tailored proposal.
+                                </p>
+                            </div>
+
+                            <div class="flex justify-between items-center">
+                                <button type="button" onclick="prevStep(1)" class="inline-flex items-center gap-2 px-6 py-3 border border-zinc-700 hover:border-zinc-500 text-gray-400 hover:text-white text-sm font-bold uppercase tracking-wider rounded transition-all">
+                                    <i class="fa-solid fa-arrow-left"></i> Back
+                                </button>
+                                <button type="submit" class="group inline-flex items-center gap-3 px-10 py-4 bg-redwolf hover:bg-redwolf-dark text-white font-bold text-sm uppercase tracking-wider rounded transition-all shadow-[0_0_30px_rgba(151,47,30,0.3)] hover:shadow-[0_0_50px_rgba(151,47,30,0.5)] hover:-translate-y-0.5">
+                                    Submit Quote Request <i class="fa-solid fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-zinc-950 border-t border-zinc-900 pt-16 pb-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+                    <!-- Company -->
+                    <div class="col-span-2 md:col-span-1">
+                        <a href="/index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                            <img src="/assets/logos/RED WOLF Logo.png" class="footer-logo">
+                            <div class="flex flex-col" style="height:100px;justify-content:center;">
+                                <span class="footer-brandname-top">RED WOLF</span>
+                                <span class="footer-brandname-bottom group-hover:text-redwolf-gold transition-colors">SECURITY</span>
+                            </div>
+                        </a>
+                        <p class="text-gray-500 text-sm leading-relaxed">Absolute safety without compromise. Nigeria's premium integrated security provider.</p>
+                    </div>
+                    <!-- Navigate -->
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Navigate</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/index.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Home</a></li>
+                            <li><a href="/about.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">About Us</a></li>
+                            <li><a href="/services.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Services</a></li>
+                            <li><a href="/contact.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Services -->
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/services/guarding.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Guarding</a></li>
+                            <li><a href="/services/cctv.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">CCTV & Surveillance</a></li>
+                            <li><a href="/services/fire.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Fire Detection</a></li>
+                            <li><a href="/services/solar.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Solar Solutions</a></li>
+                            <li><a href="/services/access-control.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Access Control</a></li>
+                            <li><a href="/services/tracking.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Vehicle Tracking</a></li>
+                        </ul>
+                    </div>
+                    <!-- Contact -->
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Get in Touch</h4>
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fa-solid fa-envelope text-redwolf mt-0.5 flex-shrink-0"></i>
+                                <a href="mailto:contact@redwolfsecurity.com" class="text-gray-500 hover:text-redwolf-gold transition-colors">contact@redwolfsecurity.com</a>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-gray-500">
+                                <i class="fa-solid fa-phone text-redwolf mt-0.5 flex-shrink-0"></i>
+                                <a href="tel:+2348180303067" class="hover:text-redwolf-gold transition-colors">+234 818 030 3067</a>
+                            </li>
+                        </ul>
+                        <a href="/quote.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-redwolf hover:bg-redwolf-dark text-white text-xs font-bold uppercase tracking-wider rounded transition-all shadow-[0_0_20px_rgba(151,47,30,0.3)] hover:shadow-[0_0_35px_rgba(151,47,30,0.5)]"> Get a Quote <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="border-t border-zinc-900 pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
+                    <p class="text-zinc-700 text-xs">&copy; 2026 Red Wolf Security. All Rights Reserved.</p>
+                    <p class="text-zinc-700 text-xs">Designed by <a href="https://nexoraweb.agency/" target="_blank" class="text-redwolf hover:text-redwolf-gold transition-colors font-bold">Nexora Web Agency</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating Elements -->
+        <a href="https://wa.me/2348180303067" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+        <div id="mobile-cta-bar" class="mobile-cta-bar">
+            <a href="tel:+2348180303067" class="flex-1 flex items-center justify-center gap-2 py-2.5 border border-zinc-700 rounded text-xs font-bold text-white uppercase tracking-wider hover:border-zinc-500 transition-all">
+                <i class="fa-solid fa-phone text-redwolf"></i> Call Us
+            </a>
+            <a href="/contact.html" class="flex-1 flex items-center justify-center gap-2 py-2.5 bg-redwolf hover:bg-redwolf-dark rounded text-xs font-bold text-white uppercase tracking-wider transition-all">
+                <i class="fa-solid fa-message"></i> Contact
+            </a>
+        </div>
+
+        <script src="/nav-highlight.js"></script>
+        <script src="/main.js"></script>
+        <script>
+            let currentStep = 1;
+
+            function nextStep(step) {
+                if (step === 2) {
+                    const required = document.querySelectorAll('#step-1 [required]');
+                    for (const el of required) {
+                        if (!el.value.trim()) {
+                            el.reportValidity();
+                            return;
+                        }
+                    }
+                }
+                document.getElementById('step-' + currentStep).classList.remove('active');
+                document.getElementById('step-' + step).classList.add('active');
+                currentStep = step;
+                updateIndicator();
+                window.scrollTo({ top: document.getElementById('step-indicator').offsetTop - 120, behavior: 'smooth' });
+            }
+
+            function prevStep(step) {
+                document.getElementById('step-' + currentStep).classList.remove('active');
+                document.getElementById('step-' + step).classList.add('active');
+                currentStep = step;
+                updateIndicator();
+                window.scrollTo({ top: document.getElementById('step-indicator').offsetTop - 120, behavior: 'smooth' });
+            }
+
+            function updateIndicator() {
+                for (let i = 1; i <= 2; i++) {
+                    const dot = document.getElementById('dot-' + i);
+                    const label = dot.nextElementSibling;
+                    if (i < currentStep) {
+                        dot.className = 'step-dot done';
+                        dot.innerHTML = '<i class="fa-solid fa-check" style="font-size:0.6rem"></i>';
+                        if (label) { label.className = label.className.replace('text-gray-600','').replace('text-white','') + ' text-redwolf-gold'; }
+                    } else if (i === currentStep) {
+                        dot.className = 'step-dot active';
+                        dot.textContent = i;
+                        if (label) { label.className = label.className.replace('text-gray-600','').replace('text-redwolf-gold','') + ' text-white'; }
+                    } else {
+                        dot.className = 'step-dot';
+                        dot.textContent = i;
+                        if (label) { label.className = label.className.replace('text-white','').replace('text-redwolf-gold','') + ' text-gray-600'; }
+                    }
+                }
+                document.getElementById('line-1').className = currentStep > 1 ? 'step-line done' : 'step-line';
+            }
+        </script>
+    </body>
+</html>

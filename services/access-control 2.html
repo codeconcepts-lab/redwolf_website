@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access Control | Red Wolf Security</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/assets/logos/RED WOLF Logo.png">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body class="antialiased selection:bg-redwolf selection:text-white flex flex-col min-h-screen">
+
+        <nav class="fixed w-full z-50 glass-panel border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="/index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                        <img src="/assets/logos/RED WOLF Logo.png" class="header-logo">
+                        <div class="flex flex-col" style="height:70px;justify-content:center;">
+                            <span class="header-brandname-top">RED WOLF</span>
+                            <span class="header-brandname-bottom group-hover:text-redwolf-gold transition-colors">SECURITY</span>
+                        </div>
+                    </a>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="/index.html" id="nav-home" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Home</a>
+                        <a href="/about.html" id="nav-about" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">About</a>
+                        <a href="/services.html" id="nav-services" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Services</a>
+                        <a href="/contact.html" id="nav-contact" class="nav-link text-sm font-bold text-gray-400 hover:text-white transition-colors uppercase tracking-wide px-2 py-2">Contact</a>
+                        <a href="/quote.html" class="ml-2 px-5 py-2.5 bg-redwolf hover:bg-redwolf-dark text-white text-xs font-bold uppercase tracking-wider rounded transition-all shadow-[0_0_20px_rgba(151,47,30,0.3)] hover:shadow-[0_0_35px_rgba(151,47,30,0.5)]">Get a Quote</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button onclick="document.getElementById(\'mobile-menu\').classList.toggle(\'hidden\')" class="text-white hover:text-redwolf-gold transition-colors">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-zinc-900/95 backdrop-blur border-t border-zinc-800">
+                <div class="px-4 pt-2 pb-4 space-y-1">
+                    <a href="/index.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Home</a>
+                    <a href="/about.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">About</a>
+                    <a href="/services.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Services</a>
+                    <a href="/contact.html" class="block px-3 py-3 text-sm font-bold text-white hover:text-redwolf-gold uppercase tracking-wide border-b border-zinc-800/50">Contact</a>
+                    <div class="pt-3"><a href="/quote.html" class="block w-full text-center px-4 py-3 bg-redwolf hover:bg-redwolf-dark text-white text-sm font-bold uppercase tracking-wider rounded transition-all">Get a Quote</a></div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow pt-20 relative">
+            <div class="fixed inset-0 z-[-1] bg-gradient-to-b from-zinc-950 via-black to-black pointer-events-none"></div>
+            <div class="absolute inset-0 z-[-1] bg-dot-pattern opacity-30 pointer-events-none fixed"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20">
+                <a href="/services.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-redwolf-gold transition-colors mb-10 group">
+                    <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> Back to Services</a>
+                <h1
+                    class="text-4xl md:text-5xl font-black text-white mb-10">Access
+                    Control & Detection</h1>
+                <div class="grid gap-8">
+                    <!-- Access Control -->
+                    <div class="feature-card p-8 rounded-2xl">
+                        <div
+                            class="flex flex-col md:flex-row justify-between items-start gap-12">
+                            <div class="flex-1">
+                                <h2
+                                    class="text-2xl font-bold text-white mb-4">Access
+                                    Control</h2>
+                                <p class="text-gray-400 mb-6">Access control
+                                    systems replace metal keys with key
+                                    cards, fobs, electronic passcodes and
+                                    monitored electronic locks. Owners can
+                                    specify who enters specific areas and at
+                                    what times.</p>
+                                <div
+                                    class="bg-zinc-900/50 p-5 rounded-xl hover:bg-zinc-800 hover:border-redwolf/30 border border-transparent transition-all duration-300">
+                                    <strong
+                                        class="text-white text-sm block mb-3">Key
+                                        Benefits</strong>
+                                    <ul
+                                        class="space-y-2 text-sm text-gray-400">
+                                        <li class="flex items-center"><i
+                                                class="fa-solid fa-check text-redwolf mr-2"></i>
+                                            Prevents unauthorised key
+                                            duplication</li>
+                                        <li class="flex items-center"><i
+                                                class="fa-solid fa-check text-redwolf mr-2"></i>
+                                            Electronic locks cannot be
+                                            picked</li>
+                                        <li class="flex items-center"><i
+                                                class="fa-solid fa-check text-redwolf mr-2"></i>
+                                            Central dashboard for
+                                            monitoring</li>
+                                        <li class="flex items-center"><i
+                                                class="fa-solid fa-check text-redwolf mr-2"></i>
+                                            Enhanced confidentiality</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex-1 w-full">
+                                <h3
+                                    class="text-xl font-bold text-white mb-4">Intrusion
+                                    Detection</h3>
+                                <p
+                                    class="text-sm text-gray-400 mb-6">Components
+                                    depending on your risks and business
+                                    processes.</p>
+                                <div class="space-y-4">
+                                    <div
+                                        class="bg-zinc-900/50 p-4 rounded-lg border-l-2 border-redwolf hover:bg-zinc-800 transition-colors duration-300">
+                                        <strong
+                                            class="text-white text-sm block mb-1">Detectors</strong>
+                                        <p
+                                            class="text-xs text-gray-500">Designed
+                                            to detect intruders as early as
+                                            possible using various sensing
+                                            principles.</p>
+                                    </div>
+                                    <div
+                                        class="bg-zinc-900/50 p-4 rounded-lg border-l-2 border-redwolf hover:bg-zinc-800 transition-colors duration-300">
+                                        <strong
+                                            class="text-white text-sm block mb-1">Alarm
+                                            Monitoring</strong>
+                                        <p
+                                            class="text-xs text-gray-500">Immediate
+                                            action taken by central
+                                            monitoring centre after
+                                            verification, increasing
+                                            apprehension likelihood.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Intercoms -->
+                    <div class="feature-card p-8 rounded-2xl">
+                        <h2
+                            class="text-2xl font-bold text-white mb-6">Intercom
+                            Systems</h2>
+                        <p class="text-gray-400 mb-6">Communication between
+                            rooms or locations via network connections.
+                            Indoor and outdoor models available, powered by
+                            PoE.</p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div
+                                class="bg-zinc-900/50 p-6 rounded-xl hover:bg-zinc-800 hover:border-redwolf/30 border border-transparent transition-all duration-300">
+                                <h3
+                                    class="text-white font-bold mb-3 text-sm uppercase tracking-wider">IP
+                                    Features</h3>
+                                <ul
+                                    class="text-xs text-gray-400 space-y-2">
+                                    <li>High quality speaker/mic</li>
+                                    <li>Vol/Monitor/PTT controls</li>
+                                    <li>Active/Link/Talk LEDs</li>
+                                    <li>TalkMaster Solo Software</li>
+                                    <li>PoE & 3.5mm Jacks</li>
+                                </ul>
+                            </div>
+                            <div
+                                class="bg-zinc-900/50 p-6 rounded-xl hover:bg-zinc-800 hover:border-redwolf/30 border border-transparent transition-all duration-300">
+                                <h3
+                                    class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Outdoor
+                                    Models</h3>
+                                <ul
+                                    class="text-xs text-gray-400 space-y-3">
+                                    <li><strong>TVIP-intercomPA-O-2G:</strong>
+                                        1 watt, PoE, flush-mounted stainless
+                                        steel.</li>
+                                    <li><strong>TVIP-intercomPA-O-BB:</strong>
+                                        1 watt, PoE, surface-mounted with
+                                        hood.</li>
+                                    <li><strong>TVIP-IntercomPA:</strong>
+                                        Outdoor enclosure, network module,
+                                        analog panel.</li>
+                                </ul>
+                            </div>
+                            <div
+                                class="bg-zinc-900/50 p-6 rounded-xl hover:bg-zinc-800 hover:border-redwolf/30 border border-transparent transition-all duration-300">
+                                <h3
+                                    class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Use
+                                    Cases</h3>
+                                <ul
+                                    class="text-xs text-gray-400 space-y-3">
+                                    <li>
+                                        <strong
+                                            class="block text-gray-300">Network
+                                            Attached</strong> Manual door
+                                        access control. Standalone or
+                                        integrated with cameras/access
+                                        systems.
+                                    </li>
+                                    <li>
+                                        <strong
+                                            class="block text-gray-300">Apartments</strong>
+                                        Multi-tenant systems with built-in
+                                        cameras, mobile-enabled access, and
+                                        lock integration.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-zinc-950 border-t border-zinc-900 pt-16 pb-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+                    <div class="col-span-2 md:col-span-1">
+                        <a href="/index.html" class="flex items-center gap-3 mb-5"><img src="/assets/logos/RED WOLF Logo.png" class="footer-logo"><div><span class="block font-bold text-white text-sm leading-tight">RED WOLF</span><span class="block text-redwolf text-xs uppercase tracking-widest">SECURITY</span></div></a>
+                        <p class="text-gray-600 text-xs leading-relaxed">Absolute safety without compromise. Nigeria's premium integrated security provider.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Navigate</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/index.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Home</a></li>
+                            <li><a href="/about.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">About Us</a></li>
+                            <li><a href="/services.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Services</a></li>
+                            <li><a href="/contact.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/services/guarding.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Guarding</a></li>
+                            <li><a href="/services/cctv.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">CCTV &amp; Surveillance</a></li>
+                            <li><a href="/services/fire.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Fire Detection</a></li>
+                            <li><a href="/services/solar.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Solar Solutions</a></li>
+                            <li><a href="/services/access-control.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Access Control</a></li>
+                            <li><a href="/services/tracking.html" class="text-gray-500 hover:text-redwolf-gold text-sm transition-colors">Vehicle Tracking</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Get in Touch</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-sm text-gray-500"><i class="fa-solid fa-location-dot text-redwolf mt-0.5 flex-shrink-0"></i><span>Nigeria (National Service)</span></li>
+                            <li class="flex items-start gap-3 text-sm"><i class="fa-solid fa-envelope text-redwolf mt-0.5 flex-shrink-0"></i><a href="mailto:contact@redwolfsecurity.com" class="text-gray-500 hover:text-redwolf-gold transition-colors">contact@redwolfsecurity.com</a></li>
+                            <li class="flex items-start gap-3 text-sm text-gray-500"><i class="fa-solid fa-phone text-redwolf mt-0.5 flex-shrink-0"></i><span>+234 (0) 123 456 7890</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-zinc-900 pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
+                    <p class="text-zinc-700 text-xs">&copy; 2025 Red Wolf Security. All Rights Reserved.</p>
+                    <p class="text-zinc-700 text-xs">Designed by <a href="https://www.linkedin.com/in/joshua-trevor-stevenson/" target="_blank" class="text-redwolf hover:text-redwolf-gold transition-colors font-bold">Nexora Web Agency</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/nav-highlight.js"></script>
+        <script src="/main.js"></script>
+    </body>
+</html>
